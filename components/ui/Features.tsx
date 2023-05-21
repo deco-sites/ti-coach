@@ -29,28 +29,23 @@ function FeatureHighlights(
   return (
     <div class="container min-h-[280px] p-6 sm:px-0 sm:py-10">
       <div class="border-base-200 border border-solid">
-        <div class="flex flex-col justify-evenly mx-6 sm:flex-row sm:mx-0 sm:my-10">
-          {features.map(({ image, title, description }, index) => (
-            <>
-              <div class="transition ease-in-out hover:-translate-y-1 hover:scale-110 flex flex-row gap-4 py-6 sm:flex-col sm:py-0 sm:px-8">
-                {image && (
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={120}
-                    height={120}
-                  />
-                )}
-
-                <div class="flex flex-col gap-2">
-                  <span class="font-medium text-xl">{title}</span>
-                  <span class="text-sm">{description}</span>
-                </div>
-              </div>
-              {index < features.length - 1 && (
-                <hr class="h-[1px] sm:h-auto sm:w-[1px] bg-neutral-300 sm:ml-8 sm:mr-8 mt-4 sm:mt-0 mb-4 sm:mb-0" />
+        <div class="flex flex-col justify-evenly divide-y divide-base-200 mx-6 sm:flex-row sm:divide-y-0 sm:divide-x sm:mx-0 sm:my-10">
+          {features.map(({ image, title, description }) => (
+            <div class="flex flex-row gap-4 py-6 sm:flex-col sm:py-0 sm:px-8">
+              {image && (
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={120}
+                  height={120}
+                />
               )}
-            </>
+
+              <div class="flex flex-col gap-2">
+                <span class="font-medium text-xl">{title}</span>
+                <span class="text-sm">{description}</span>
+              </div>
+            </div>
           ))}
         </div>
       </div>
