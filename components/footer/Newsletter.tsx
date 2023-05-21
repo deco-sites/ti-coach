@@ -31,8 +31,8 @@ function Newsletter() {
           Cadastre-se
         </span>
         <span class="text-sm text-primary-content">
-          Fique por dentro das novidades e ganhe 15% de desconto na primeira
-          compra. Para mais informações clique aqui.
+          Fique por dentro das novidades e ganhe prêmios exclusivos. Para mais
+          informações clique aqui.
         </span>
       </div>
       <form
