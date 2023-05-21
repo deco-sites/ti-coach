@@ -1,12 +1,14 @@
-import Icon, {
-  AvailableIcons,
-} from "$store/components/ui/Icon.tsx";
+import type { Image as ImageType } from "deco-sites/std/components/types.ts";
+import Image from "deco-sites/std/components/Image.tsx";
 
 export interface Feature {
   /**
    * @description Image src
    */
-  icon: AvailableIcons;
+  image: {
+    src: ImageType;
+    alt: string;
+  };
   /**
    * @description Title
    */
@@ -28,14 +30,17 @@ function FeatureHighlights(
     <div class="container min-h-[280px] p-6 sm:px-0 sm:py-10">
       <div class="border-base-200 border border-solid">
         <div class="flex flex-col justify-evenly divide-y divide-base-200 mx-6 sm:flex-row sm:divide-y-0 sm:divide-x sm:mx-0 sm:my-10">
-          {features.map(({ icon: id = "Truck", title, description }) => (
+          {features.map(({ image, title, description }) => (
             <div class="flex flex-row gap-4 py-6 sm:flex-col sm:py-0 sm:px-8">
-              <Icon
-                id={id}
-                width={40}
-                height={40}
-                strokeWidth={2}
-              />
+              {image && (
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={120}
+                  height={120}
+                />
+              )}
+
               <div class="flex flex-col gap-2">
                 <span class="font-medium text-xl">{title}</span>
                 <span class="text-sm">{description}</span>
