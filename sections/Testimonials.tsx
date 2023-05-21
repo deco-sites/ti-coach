@@ -47,9 +47,9 @@ export default function Testimonials(
       <div class="flex flex-col gap-20 sm:grid sm:grid-cols-3 sm:gap-x-10">
         {testimonials.map(
           (testimonial) => (
-            <div class="flex flex-col gap-9 sm:pr-10">
+            <div class="transition ease-in-out hover:-translate-y-1 hover:scale-110 flex flex-col gap-9 sm:pr-10 ">
               <div class="flex justify-center">
-              <Image
+                <Image
                   src={companyLogoImage?.src}
                   alt={companyLogoImage?.alt}
                   width={100}
